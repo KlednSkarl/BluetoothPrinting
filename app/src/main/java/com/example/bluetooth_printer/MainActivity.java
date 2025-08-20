@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn_printSample = findViewById(R.id.btn_printSample);
         EditText ET_printername = findViewById(R.id.ET_printername);
 
-        String PrinterName = ET_printername.getText().toString().trim(); // this is the string value that has the bluetooth printer's name
 
 
 
@@ -29,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         btn_printSample.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               BluetoothPrinter.printBluetoothPrinter(PrinterName);
+
+                String PrinterName = ET_printername.getText().toString().trim(); // this is the string value that has the bluetooth printer's name
+                BluetoothPrinter.printBluetoothPrinter(PrinterName);
             }
         });
 
